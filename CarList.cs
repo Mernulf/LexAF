@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -11,7 +11,7 @@ namespace CarList
     class Program
     {
         // Added to play with Globalization
-        public static string GetCurrencySymbol(string code)
+        /*public static string GetCurrencySymbol(string code)
         {
             System.Globalization.RegionInfo regionInfo = (from culture in CultureInfo.GetCultures(System.Globalization.CultureTypes.InstalledWin32Cultures)
                                                           where culture.Name.Length > 0 && !culture.IsNeutralCulture
@@ -20,7 +20,7 @@ namespace CarList
                                                           select region).First();
 
             return regionInfo.CurrencySymbol;
-        }
+        }*/
 
         static void Main(string[] args)
         {
@@ -36,8 +36,8 @@ namespace CarList
             //foreach (var value in myCars)
             //{
                 //add currency symbol after price (not every symbol works with Globalization)
-                string symbol = GetCurrencySymbol("USD");
-            Console.WriteLine(symbol);
+                //string symbol = GetCurrencySymbol("USD");
+            //Console.WriteLine(symbol);
             //    Console.WriteLine(value.Make.PadRight(12) + value.Model.PadRight(12) + value.Price.PadRight(5) + symbol.PadRight(12) + value.Currency.PadRight(12) + value.Year);
             //};
 
@@ -48,17 +48,13 @@ namespace CarList
             Console.ReadLine();
         }
     }
-
-
-
+    
     class Car
     {
         public string Make { get; set; }
         public string Model { get; set; }
         public string Price { get; set; }
         public string Currency { get; set; }
-        public string Year  { get; set; }
-        
+        public string Year  { get; set; }        
     }
-
 }
